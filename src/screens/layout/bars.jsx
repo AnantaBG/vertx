@@ -286,7 +286,7 @@ export function Sidebar({ sidebarOpen, setSidebarOpen }) {
     localStorage.removeItem("exe");
     window.location.href = "/";
   };
-  // On small devices after clicking the profile popup Privacy and Terms and condition link close button are faulty
+  // On small devices close button reload and redirect issue
   const handlePrivacyClick = () => {
     navigate("/privacy");
     setShowPrivacyPopup(true);
@@ -309,6 +309,9 @@ export function Sidebar({ sidebarOpen, setSidebarOpen }) {
     navigate("/explore/bio");
     setShowDesktopProfilePopup(false);
   };
+
+
+  
   // Updated navigation handler
   const handleNavigation = async (route) => {
     if (route === "explore" && !localStorage.getItem("token")) {
